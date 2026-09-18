@@ -987,14 +987,19 @@
       display: flex; gap: .45rem;
     }
     .carousel-dot {
+      /* Visible dot stays 6px; padding expands the tap target to ~24px without changing the look */
       width: 6px; height: 6px;
+      box-sizing: content-box;
+      padding: 9px;
+      background-color: rgba(200,88,26,.3);
+      background-clip: content-box;
+      border: none;
       border-radius: 50%;
-      background: rgba(200,88,26,.3);
       cursor: pointer;
-      transition: background .25s, transform .25s;
+      transition: background-color .25s, transform .25s;
     }
     .carousel-dot.active {
-      background: var(--gold);
+      background-color: var(--gold);
       transform: scale(1.4);
     }
 
@@ -1035,7 +1040,9 @@
       z-index: 2;
     }
     #lightbox-close {
-      position: absolute; top: 1rem; right: 1.4rem;
+      position: absolute; top: .3rem; right: .7rem;
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
       font-size: 1.6rem; color: rgba(255,255,255,.5); cursor: pointer;
       background: none; border: none; z-index: 10;
       transition: color .2s; font-weight: 300;
@@ -1924,7 +1931,7 @@
             <div class="c-card" data-src="photos/gallery-01.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Together">
-                  <img src="photos/gallery-01.jpeg" alt="Tabby and Mesheck" loading="eager" />
+                  <img src="photos/gallery-01.jpeg" alt="Tabby and Mesheck — Together" loading="eager" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">✦</div>
@@ -1937,7 +1944,7 @@
             <div class="c-card" data-src="photos/gallery-02.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="A glance">
-                  <img src="photos/gallery-02.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-02.jpeg" alt="Tabby and Mesheck — A glance" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">♡</div>
@@ -1950,7 +1957,7 @@
             <div class="c-card" data-src="photos/gallery-03.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="The moment">
-                  <img src="photos/gallery-03.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-03.jpeg" alt="Tabby and Mesheck — The moment" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">✦</div>
@@ -1963,7 +1970,7 @@
             <div class="c-card" data-src="photos/gallery-04.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Pure joy">
-                  <img src="photos/gallery-04.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-04.jpeg" alt="Tabby and Mesheck — Pure joy" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">♡</div>
@@ -1976,7 +1983,7 @@
             <div class="c-card" data-src="photos/gallery-05.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="In love">
-                  <img src="photos/gallery-05.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-05.jpeg" alt="Tabby and Mesheck — In love" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">✦</div>
@@ -1989,7 +1996,7 @@
             <div class="c-card" data-src="photos/gallery-06.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Laughter">
-                  <img src="photos/gallery-06.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-06.jpeg" alt="Tabby and Mesheck — Laughter" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">♡</div>
@@ -2002,7 +2009,7 @@
             <div class="c-card" data-src="photos/gallery-07.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Always">
-                  <img src="photos/gallery-07.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-07.jpeg" alt="Tabby and Mesheck — Always" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">✦</div>
@@ -2015,7 +2022,7 @@
             <div class="c-card" data-src="photos/gallery-08.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Golden hour">
-                  <img src="photos/gallery-08.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-08.jpeg" alt="Tabby and Mesheck — Golden hour" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">♡</div>
@@ -2028,7 +2035,7 @@
             <div class="c-card" data-src="photos/gallery-09.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Forever">
-                  <img src="photos/gallery-09.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-09.jpeg" alt="Tabby and Mesheck — Forever" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">✦</div>
@@ -2041,7 +2048,7 @@
             <div class="c-card" data-src="photos/gallery-10.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Tender">
-                  <img src="photos/gallery-10.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-10.jpeg" alt="Tabby and Mesheck — Tender" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">♡</div>
@@ -2054,7 +2061,7 @@
             <div class="c-card" data-src="photos/gallery-11.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="Us">
-                  <img src="photos/gallery-11.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-11.jpeg" alt="Tabby and Mesheck — Us" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">✦</div>
@@ -2067,7 +2074,7 @@
             <div class="c-card" data-src="photos/gallery-12.jpeg">
               <div class="c-card-inner">
                 <div class="c-face" data-caption="To forever">
-                  <img src="photos/gallery-12.jpeg" alt="Tabby and Mesheck" loading="lazy" />
+                  <img src="photos/gallery-12.jpeg" alt="Tabby and Mesheck — To forever" loading="lazy" />
                 </div>
                 <div class="c-back">
                   <div class="c-back-ornament">♡</div>
@@ -2536,8 +2543,10 @@
 
       function openLb(idx) {
         lbCurrent = ((idx % N) + N) % N;
+        var caption = cards[lbCurrent].querySelector('.c-face').dataset.caption;
         lbImg.style.opacity = '0';
         lbImg.src = cards[lbCurrent].dataset.src;
+        lbImg.alt = caption ? 'Tabby and Mesheck — ' + caption : 'Tabby and Mesheck';
         lbImg.onload = function () { lbImg.style.opacity = '1'; };
         lbCount.textContent = (lbCurrent + 1) + ' / ' + N;
         lb.classList.add('open');
