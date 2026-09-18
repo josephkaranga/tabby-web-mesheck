@@ -1,0 +1,4 @@
+# Serve invite page at root — all other paths pass through normally
+/           /index.html     200
+/site       /site.html      200
+/site.html  /site.html      200
