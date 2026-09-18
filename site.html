@@ -4,6 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tabby Weds Mesheck | 14 November 2026</title>
+  <meta name="description" content="Join Tabby & Mesheck as they celebrate their wedding on Saturday, 14 November 2026 at JCM Church, Kericho, Kenya. RSVP, view the schedule, and share in their joy." />
+  <meta name="theme-color" content="#1e140c" />
+  <link rel="canonical" href="https://tabby-web-mesheck.vercel.app/site.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E" />
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tabby & Mesheck | 14 November 2026" />
+  <meta property="og:description" content="You are warmly invited to celebrate the wedding of Tabby & Mesheck — Saturday, 14 November 2026, JCM Church, Kericho, Kenya." />
+  <meta property="og:image" content="https://tabby-web-mesheck.vercel.app/photos/hero.jpeg" />
+  <meta property="og:url" content="https://tabby-web-mesheck.vercel.app/site.html" />
+  <!-- Twitter/X card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tabby & Mesheck | 14 November 2026" />
+  <meta name="twitter:description" content="You are warmly invited to celebrate the wedding of Tabby & Mesheck — Saturday, 14 November 2026, JCM Church, Kericho, Kenya." />
+  <meta name="twitter:image" content="https://tabby-web-mesheck.vercel.app/photos/hero.jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
@@ -11,6 +26,15 @@
     /* ── Reset & Base ─────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
     body {
       font-family: 'Lato', sans-serif;
       font-weight: 400;        /* up from 300 — readable weight */
@@ -2364,7 +2388,9 @@
       var autoSpin = true;
       var autoTimer;
 
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       function scheduleAuto() {
+        if (prefersReducedMotion) return;
         clearTimeout(autoTimer);
         autoTimer = setTimeout(function tick() {
           if (autoSpin) {
